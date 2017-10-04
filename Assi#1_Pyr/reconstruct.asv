@@ -1,0 +1,11 @@
+l = load('pyr.mat');
+
+d = l.diff ;
+J = size(d,2);
+temp=d{J};
+for j=J:-1:2
+temp = imresize(temp,2,'bilinear');
+temp = tmep-d{j-1};
+end
+imshow(temp);
+end
